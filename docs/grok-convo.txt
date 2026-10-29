@@ -1,0 +1,24 @@
+A redirect-chain tracer is doable. I’ll check the workspace rules, then build a paste-a-URL tool that walks every hop to the final destination.Interruptedfdont build yetHolding off. Nothing has been scaffolded or started.When you want it, the idea is a paste-a-URL tracer that walks each HTTP hop (status, location, timing) until the final page, with a hop limit and blocks on private or local addresses. Say when to build it, or if you want the scope changed first.ok fren, so we're gonna put together a website:
+it's the tool as described above - where you build a linking and connection tool, in particular a redirect chain tracer that lets users paste a URL and see every HTTP redirect hop until the final destination, entirely in the browser.
+it'll be hosted on an undecided domain and will be a static page that is a simple one page total thing nothing more just a put in url,  get taken to the page,  its right there use it nice n easy and done. but also, were in the business of advertising - this is also for the purposes of selling whispr.dev and skeletrace.com - so it's gonna need:
+
+a big area of space to plaster the skeletrace ad on - like the name, a kinda hint of the graph type view, a brief blurb about it etc.
+a 'by whispr.dev' at the top of page
+a (c) 2026 whispr.dev at bottom of page
+the kinda whsipr or skeletrace colorscheme
+similar styling in the effciient-tool-for-work, not too flowery or needless decor, not excessive aesthetic crap - does what it says on the tin feel for the page overall
+as far as actual function goes,
+as much toward the accurate specific info as can be wired in i.e. not just bearbones crap but some detaikl and some linking info etc.
+the more of the various routing systems it undertstands the better so it needs to be filled with everything from all the whole world of ips and urls to the tcp and udp  or dns etc. and the way the  tinfrastructure itself works etc. - the lot.
+it needs to be slightly smort so it can work out  best whether whats entered is more likely somehing that can be traced one way or t'other etc. - like mostlikely from the structure and the numbers present.
+it needs to be very simple/inituitive/easy/nearly too obvious - like this is a gift to use and wouldn't pick any other option.
+ok - can you build me that in .html/.css/[if necessary] jaascript? please fren?
+The page can do this in the browser: redirect hops through a public checker, DNS over HTTPS, and routing from RIPEstat. Private addresses stay on the page and are not sent out. Building that as one static page, with the SkeleTrace panel and the whispr marks.Interruptedfren, skeletrace is found at skeletrace.com and all info is there, whispr.dev likewise is self explanatoryTrace is up. Paste a URL, domain, IP, prefix, ASN, or mailbox and it tells you what that is, then follows it.
+
+Redirects show every hop: status, time, and headers, through to the final page. http://github.com goes 301 to https://github.com.
+DNS covers address, alias, mail, and name-server records, plus the chain from name to address.
+Routing shows the prefix, the network that announces it, the registry, and the links out to RIPEstat. An address or ASN anywhere in the results can be traced again with one click.
+A bare number is read as an ASN or a decimal IP, and the other reading is one click away. Private and local addresses are explained on the page and are not sent out.
+
+Browsers cannot send ICMP or raw TCP/UDP, so this is not a traceroute. Hops come from a public redirect checker, DNS from Cloudflare’s resolver, and routing from RIPEstat.
+The page is by whispr.dev, with the SkeleTrace panel linking to skeletrace.com. Try http://github.com, 1.1.1.1, or AS13335.

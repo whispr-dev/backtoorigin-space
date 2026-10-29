@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trace</title>
+    <meta
+      name="description"
+      content="Paste a URL, domain, IP, prefix, or ASN. See each redirect hop, then the DNS and routing behind it."
+    />
+    <meta name="theme-color" content="#121410" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <noscript>This page needs JavaScript to trace a link.</noscript>
+    <div class="trace-mount" data-trace-root></div>
+    <script type="module">
+      import { mount } from "./app.js";
+      const root = document.querySelector("[data-trace-root]");
+      if (root) mount(root);
+    </script>
+  </body>
+</html>
